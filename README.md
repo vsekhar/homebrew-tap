@@ -10,5 +10,6 @@ brew install vsekhar/tap/decide
 |---|---|
 | [`decide`](https://github.com/vsekhar/decide) | Make decisions from the command line and in scripts. |
 
-Each formula builds from source. After `brew tap vsekhar/tap`, plain
-`brew install decide` works too.
+Apple silicon Macs on macOS 15 or later get a prebuilt bottle. Elsewhere
+Homebrew builds from source, which needs Xcode. After `brew tap vsekhar/tap`,
+plain `brew install decide` works too.
