@@ -6,6 +6,12 @@ class Decide < Formula
   license "Apache-2.0"
   head "https://github.com/vsekhar/decide.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/vsekhar/homebrew-tap/releases/download/bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c3ec4d50252047ae65c003dbb9e4af2031f9668c6b483dc5b82238577cd0a40"
+  end
+
   # DecisionModels uses SwiftUI's @Entry macro, whose plugin ships only
   # with Xcode, not with the Command Line Tools. 26.3 is the newest Xcode
   # that runs on macOS 15, where the bottle is built.
