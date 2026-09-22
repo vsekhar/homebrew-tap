@@ -7,8 +7,9 @@ class Decide < Formula
   head "https://github.com/vsekhar/decide.git", branch: "main"
 
   # DecisionModels uses SwiftUI's @Entry macro, whose plugin ships only
-  # with Xcode, not with the Command Line Tools. 26.6 is what CI builds with.
-  depends_on xcode: ["26.6", :build]
+  # with Xcode, not with the Command Line Tools. 26.3 is the newest Xcode
+  # that runs on macOS 15, where the bottle is built.
+  depends_on xcode: ["26.3", :build]
   depends_on :macos
 
   deny_network_access!
