@@ -12,11 +12,11 @@ class Decide < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c3ec4d50252047ae65c003dbb9e4af2031f9668c6b483dc5b82238577cd0a40"
   end
 
-  # DecisionModels uses SwiftUI's @Entry macro, whose plugin ships only
-  # with Xcode, not with the Command Line Tools. 26.3 is the newest Xcode
-  # that runs on macOS 15, where the bottle is built.
-  depends_on xcode: ["26.3", :build]
   depends_on :macos
+
+  # Package.swift needs Swift 6.2, which the Xcode 26 Command Line Tools
+  # provide. Xcode itself is not needed.
+  uses_from_macos "swift" => :build
 
   deny_network_access!
 
