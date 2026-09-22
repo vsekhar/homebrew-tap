@@ -19,9 +19,15 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        # A bottle pours onto the same or a newer macOS, so one built on
-        # the oldest supported macOS serves every later one.
-        os: [ macos-15 ]
+        # A bottle pours onto the same or a newer macOS, so this serves
+        # macOS 26 and later. This image's Xcode and Command Line Tools
+        # match (both 26.6, Swift 6.3.3, as in decide's own CI), which
+        # matters: Homebrew builds against the Command Line Tools SDK, and
+        # swift-syntax's prebuilt macro support refuses an SDK older than
+        # the one it was built with. The macos-15 image pairs Xcode 26.3
+        # with the 16.4 tools, so it cannot build this formula. macOS 15
+        # builds from source with the Xcode 26 Command Line Tools instead.
+        os: [ macos-26 ]
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read
@@ -29,20 +35,6 @@ jobs:
       contents: read
       pull-requests: read
     steps:
-      # The image's default toolchain is Xcode 16.4 with Swift 6.1, and
-      # Package.swift needs 6.2. Xcode 26.3 is the newest on macOS 15.
-      - name: Select a Swift 6.2 toolchain
-        run: sudo xcode-select -s /Applications/Xcode_26.3.app
-
-      # The image's Command Line Tools are older than that Xcode and carry
-      # the macOS 15.5 SDK. Homebrew builds a formula that does not require
-      # Xcode against the Command Line Tools SDK, and swift-syntax's prebuilt
-      # macro support, built with the 26.2 SDK, refuses to load against an
-      # older one. A Mac with the Xcode 26 Command Line Tools has the 26.2
-      # SDK and no such problem. Without the tools, Homebrew uses Xcode's SDK.
-      - name: Remove the outdated Command Line Tools
-        run: sudo rm -rf /Library/Developer/CommandLineTools
-
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
