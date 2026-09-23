@@ -1,8 +1,8 @@
 class Decide < Formula
   desc "Make decisions from the command-line and in scripts"
   homepage "https://github.com/vsekhar/decide"
-  url "https://github.com/vsekhar/decide/archive/refs/tags/0.1.2.tar.gz"
-  sha256 "822bbd23e56c87394cbf5906f28c9a2597a0ac3597d3142801d4654c45f6e87d"
+  url "https://github.com/vsekhar/decide/archive/refs/tags/0.2.0.tar.gz"
+  sha256 "9892bacf74dcadfd173016aa25553906da3c0dc7a438ae0f1ea17b08bbd48427"
   license "Apache-2.0"
   head "https://github.com/vsekhar/decide.git", branch: "main"
 
