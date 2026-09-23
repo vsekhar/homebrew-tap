@@ -35,5 +35,8 @@ class Decide < Formula
     output = shell_output("#{bin}/decide --context x 'Is the sky blue?' 2>&1", 10)
     assert_match "DECIDE_MODEL is not set", output
     assert_match "Usage: decide", shell_output("#{bin}/decide --help")
+    # The version is a constant in decide's source, set by hand at release.
+    # This catches a tarball whose constant lags its tag.
+    assert_match version.to_s, shell_output("#{bin}/decide --version")
   end
 end
