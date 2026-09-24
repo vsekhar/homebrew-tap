@@ -8,7 +8,7 @@ class Decide < Formula
 
   bottle do
     root_url "https://github.com/vsekhar/homebrew-tap/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "e851462c869ea896eedaa11d900ce6325517456dcb71f08340d8b8fe5a1cf3e1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "50addc20b0fb5c179ebd9b19fe7df9bdfd62ab83558bb26840a014dd36e1b7e2"
   end
 
   depends_on :macos
