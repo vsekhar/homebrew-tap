@@ -1,8 +1,8 @@
 class Decide < Formula
   desc "Make decisions from the command-line, in scripts, and in agent skills"
   homepage "https://github.com/vsekhar/decide"
-  url "https://github.com/vsekhar/decide/archive/refs/tags/0.3.0.tar.gz"
-  sha256 "738cc40c9bd8c45161bd2b374afa9c15f6f79b4a1ca7a32c52c481ec86cf8a71"
+  url "https://github.com/vsekhar/decide/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "285e7aaa92b86d0eefee3f4bbfb4669db861d858f1feb1255a57c4c2f446c0b1"
   license "Apache-2.0"
   head "https://github.com/vsekhar/decide.git", branch: "main"
 
