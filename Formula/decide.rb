@@ -1,14 +1,14 @@
 class Decide < Formula
   desc "Make decisions from the command line, in scripts, and in agent skills"
   homepage "https://github.com/vsekhar/decide"
-  url "https://github.com/vsekhar/decide/archive/refs/tags/0.1.2.tar.gz"
-  sha256 "822bbd23e56c87394cbf5906f28c9a2597a0ac3597d3142801d4654c45f6e87d"
+  url "https://github.com/vsekhar/decide/archive/refs/tags/0.3.0.tar.gz"
+  sha256 "738cc40c9bd8c45161bd2b374afa9c15f6f79b4a1ca7a32c52c481ec86cf8a71"
   license "Apache-2.0"
   head "https://github.com/vsekhar/decide.git", branch: "main"
 
   bottle do
     root_url "https://github.com/vsekhar/homebrew-tap/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "4cce6e5a7269f35f964a879c9ba1def24ccc46b705b5dd51f18426e041ea2daa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "50addc20b0fb5c179ebd9b19fe7df9bdfd62ab83558bb26840a014dd36e1b7e2"
   end
 
   depends_on :macos
