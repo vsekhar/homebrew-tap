@@ -1,5 +1,5 @@
 class Decide < Formula
-  desc "Make decisions from the command-line and in scripts"
+  desc "Make decisions from the command line, in scripts, and in agent skills"
   homepage "https://github.com/vsekhar/decide"
   url "https://github.com/vsekhar/decide/archive/refs/tags/0.1.2.tar.gz"
   sha256 "822bbd23e56c87394cbf5906f28c9a2597a0ac3597d3142801d4654c45f6e87d"
